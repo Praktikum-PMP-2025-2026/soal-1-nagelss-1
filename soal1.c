@@ -50,13 +50,13 @@ int main(){
                 delete = 1;
             }
             else{
-                for (int j;j>-1;j--){
-                    if (script[j]=='('){
-                        delete = 0;
+                for (int j=i-1;j>-1;j--){
+                    if (script[j]==')'){
+                        delete = 1;
                         break;
                     }
-                    else if (script[j]==')'){
-                        delete = 1;
+                    else if (script[j]=='('){
+                        delete = 0;
                         break;
                     }
                     else{
@@ -65,6 +65,7 @@ int main(){
                 }
             }
         }
+
         if (delete==0){
             new[x] = script[i];
             x += 1;
